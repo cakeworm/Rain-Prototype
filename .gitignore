@@ -79,3 +79,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+Assets/Audio/desktop.ini.meta
+Assets/Materials/desktop.ini.meta
+Assets/Scripts/desktop.ini.meta
+Assets/Prefabs/desktop.ini.meta
+Assets/Scenes/desktop.ini.meta
