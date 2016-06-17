@@ -13,17 +13,26 @@ public class Cameras : MonoBehaviour
     public float speedY = 2.0f;
     public float speedZ = 4.0f;
     public Vector3 nextPosition = Vector3.zero;
-
+    public bool perspectiveView = true;
+   
+   void Start()
+    {
+        //transform.LookAt(player);
+    }
 
 
     void LateUpdate ()
     {
-        if (Input.GetKey("space"))
+
+        //to prevent the orthographic from getting slanted, i need to lock the player position to zero on certain axes before executing the followposition and lookatplayer. Maybe a "lock" method?
+        if (Input.GetKey("mouse 0"))
         {
             FollowPosition2D();
             LookAtPlayer();
+        }   
 
-        }
+
+
         else
         {
             FollowPosition();
@@ -36,7 +45,7 @@ public class Cameras : MonoBehaviour
 
     void FollowPosition2D()
 
-        
+        //should do a while loop with a bool (2dView = true;), GetKeyUp knocks it false, and then run a LookAt right before the method returns to the else in LateUpdate
 
         {
             nextPosition.x = Mathf.Lerp (this.transform.position.x, target2D.position.x, speedX * Time.deltaTime);
@@ -57,8 +66,9 @@ public class Cameras : MonoBehaviour
 
     void LookAtPlayer ()
         {
-           this.transform.LookAt (player.position);
+           transform.LookAt (player, transform.up);
         }
+
 
 
 

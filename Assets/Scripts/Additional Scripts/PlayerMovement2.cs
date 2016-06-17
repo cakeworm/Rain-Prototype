@@ -28,7 +28,7 @@ public class PlayerMovement2 : MonoBehaviour {
         {
 	        Debug.Log ("Key UpArrow pressed.");
 
-            this.transform.Translate (new Vector3 (0, moveSpeed *Time.deltaTime, 0));
+            this.transform.Translate (new Vector3 (0, moveSpeed *Time.deltaTime, 0 ));
 	    } 
 
 	    else if (Input.GetKey (KeyCode.DownArrow)) 
@@ -60,14 +60,14 @@ public class PlayerMovement2 : MonoBehaviour {
 	    {
 	        Debug.Log ("Key W pressed.");
 
-            this.transform.Translate (new Vector3 (0, 0, dashSpeed * Time.deltaTime));
+            this.transform.Translate (new Vector3 (0, 0, -moveSpeed * Time.deltaTime ));
 
 	    }
 	    else if (Input.GetKey (KeyCode.S))
    	    {
 	        Debug.Log ("Key S pressed.");
 
-            this.transform.Translate (new Vector3 (0, 0, -moveSpeed * Time.deltaTime));
+            this.transform.Translate (new Vector3 (0, 0, dashSpeed * Time.deltaTime));
 	    }
 	}
 
