@@ -3,9 +3,9 @@ using System.Collections;
 
 public class PlayerMovement2 : MonoBehaviour {
 
-    public float fallSpeed = 20.0f;
+    public float fallSpeed = 23.0f;
     public float moveSpeed = 25.0f;
-    public float dashSpeed = 75.0f;
+    public float dashSpeed = 90.0f;
 	
 
 
