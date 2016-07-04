@@ -1,38 +1,74 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerMovement : MonoBehaviour 
-{
-    public float speed  = 6f;
-    Vector3 movement; 
-    Rigidbody playerRigidbody;
+public class PlayerMovement : MonoBehaviour {
 
-    void Awake()
+    public float fallSpeed = 23.0f;
+    public float moveSpeed = 25.0f;
+    public float dashSpeed = 90.0f;
+	
+
+
+	void Update ()
+
+	{
+        Fall();
+        Movement ();
+	}
+
+    void Fall()
     {
-    playerRigidbody = GetComponent<Rigidbody>();
+        this.transform.Translate (new Vector3 (0, 0, fallSpeed * Time.deltaTime));
     }
 
-    void FixedUpdate()
-    {
-        float h = Input.GetAxisRaw ("Horizontal");
-        float v = Input.GetAxisRaw ("Vertical");
-        float d = Input.GetAxisRaw ("Dive");
+	void Movement ()
+	{
 
-        Move (h,v, d);
-    }
+	    if (Input.GetKey (KeyCode.UpArrow)) 
+        {
+	        Debug.Log ("Key UpArrow pressed.");
 
-    void Move(float h, float v, float d)
-    {
-    movement.Set (h, d, v);
+            this.transform.Translate (new Vector3 (0, moveSpeed *Time.deltaTime, 0 ));
+	    } 
 
-    movement = movement.normalized *speed * Time.deltaTime;
+	    else if (Input.GetKey (KeyCode.DownArrow)) 
+        {
+	        Debug.Log ("Key DownArrow pressed.");
 
-    playerRigidbody.MovePosition(transform.position + movement);
-    }
+            this.transform.Translate (new Vector3 (0, -moveSpeed * Time.deltaTime, 0 ));
+	    } 
 
-    /*void Turning()
-    {
+	    if (Input.GetKey (KeyCode.LeftArrow)) 
+	    {
+		   
+		    Debug.Log ("Key Leftarrow pressed");
 
-    }
-    */
+            this.transform.Translate (new Vector3 (-moveSpeed * Time.deltaTime, 0, 0));
+
+	    }
+
+	    else if (Input.GetKey (KeyCode.RightArrow)) 
+	    {
+		    
+			Debug.Log ("Key RightArrow pressed");
+
+            this.transform.Translate (new Vector3 (moveSpeed * Time.deltaTime, 0, 0));
+		    
+	    }
+
+	    if (Input.GetKey (KeyCode.W)) 
+	    {
+	        Debug.Log ("Key W pressed.");
+
+            this.transform.Translate (new Vector3 (0, 0, -moveSpeed * Time.deltaTime ));
+
+	    }
+	    else if (Input.GetKey (KeyCode.S))
+   	    {
+	        Debug.Log ("Key S pressed.");
+
+            this.transform.Translate (new Vector3 (0, 0, dashSpeed * Time.deltaTime));
+	    }
+	}
+
 }

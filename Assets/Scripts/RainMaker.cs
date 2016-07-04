@@ -4,13 +4,14 @@ using System.Collections;
 public class RainMaker : MonoBehaviour 
 {
    
-    public GameObject raindrop;
+    public GameObject dropPrefab;
     public bool raining = true;
+
  
   
 
     void Start()
-    {
+    {        
         StartCoroutine ("rain");
     }
 
@@ -20,9 +21,11 @@ public class RainMaker : MonoBehaviour
         {                   
             yield return new WaitForSeconds(1);
             Vector3 position = new Vector3(Random.Range(-14.0F, 14.0F), 70f, Random.Range(-14.0F, 14.0F));
-            Instantiate(raindrop, position, Quaternion.identity);
+            GameObject raindrop = (GameObject) Instantiate(dropPrefab, position, Quaternion.identity);
 
-            raindrop.name = "Falling Drop";
+            raindrop.name = "raindrop";
+
+         
 
         }
     }
