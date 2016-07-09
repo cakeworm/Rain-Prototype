@@ -26,23 +26,20 @@ public class PlayerMovement : MonoBehaviour {
 
 	    if (Input.GetKey (KeyCode.UpArrow)) 
         {
-	        Debug.Log ("Key UpArrow pressed.");
-
+	       
             this.transform.Translate (new Vector3 (0, moveSpeed *Time.deltaTime, 0 ));
 	    } 
 
 	    else if (Input.GetKey (KeyCode.DownArrow)) 
         {
-	        Debug.Log ("Key DownArrow pressed.");
-
+	      
             this.transform.Translate (new Vector3 (0, -moveSpeed * Time.deltaTime, 0 ));
 	    } 
 
 	    if (Input.GetKey (KeyCode.LeftArrow)) 
 	    {
 		   
-		    Debug.Log ("Key Leftarrow pressed");
-
+		    
             this.transform.Translate (new Vector3 (-moveSpeed * Time.deltaTime, 0, 0));
 
 	    }
@@ -50,22 +47,20 @@ public class PlayerMovement : MonoBehaviour {
 	    else if (Input.GetKey (KeyCode.RightArrow)) 
 	    {
 		    
-			Debug.Log ("Key RightArrow pressed");
-
+			
             this.transform.Translate (new Vector3 (moveSpeed * Time.deltaTime, 0, 0));
 		    
 	    }
 
 	    if (Input.GetKey (KeyCode.W)) 
 	    {
-	        Debug.Log ("Key W pressed.");
-
+	        
             this.transform.Translate (new Vector3 (0, 0, -moveSpeed * Time.deltaTime ));
 
 	    }
 	    else if (Input.GetKey (KeyCode.S))
    	    {
-	        Debug.Log ("Key S pressed.");
+	       
 
             this.transform.Translate (new Vector3 (0, 0, dashSpeed * Time.deltaTime));
 	    }

@@ -6,6 +6,7 @@ public class RainMaker : MonoBehaviour
    
     public GameObject dropPrefab;
     public bool raining = true;
+    public GameObject raindrop;
 
  
   
