@@ -12,7 +12,7 @@ public class DropStatus : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
        
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Surface")
         {
             Destroy(this.gameObject);
         }

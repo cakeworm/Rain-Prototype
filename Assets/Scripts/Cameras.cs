@@ -9,9 +9,9 @@ public class Cameras : MonoBehaviour
     public Transform target2D = null;
 
    
-    public float speedX = 6.0f;
-    public float speedY = 2.0f;
-    public float speedZ = 4.0f;
+    public float speedX = 1.0f;
+    public float speedY = 1.0f;
+    public float speedZ = 1.0f;
     public Vector3 nextPosition = Vector3.zero;
     public bool perspectiveView = true;
    

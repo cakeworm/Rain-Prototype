@@ -20,7 +20,7 @@ public class Absorb : MonoBehaviour
        
        else if (other.gameObject.tag == "Drop")
        {
-        this.gameObject.transform.localScale += new Vector3(5,5,5);
+            this.gameObject.transform.localScale += new Vector3(0.1f,0.1f,0.1f);
        }
     }
 

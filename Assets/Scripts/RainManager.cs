@@ -11,12 +11,12 @@ public class RainManager : MonoBehaviour
 
     void Start()
     {
-       InvokeRepeating ("Rain",0.1f, 1.0f);
+       InvokeRepeating ("Rain",0.1f, 0.1f);
     }
 
     void Rain()
     {
-        Vector3 position = new Vector3(Random.Range(-14.0F, 14.0F), 70f, Random.Range(-14.0F, 14.0F));
+        Vector3 position = new Vector3(Random.Range(-25.0F, 25.0F), 70f, Random.Range(-25.0F, 25.0F));
         Instantiate(drop, position, Quaternion.identity);
         drop.name = "drop";
 
