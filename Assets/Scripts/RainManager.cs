@@ -16,7 +16,7 @@ public class RainManager : MonoBehaviour
 
     void Rain()
     {
-        Vector3 position = new Vector3(Random.Range(-25.0F, 25.0F), 70f, Random.Range(-25.0F, 25.0F));
+        Vector3 position = new Vector3(Random.Range(-25.0F, 25.0F), 750f, Random.Range(-25.0F, 25.0F));
         Instantiate(drop, position, Quaternion.identity);
         drop.name = "drop";
 

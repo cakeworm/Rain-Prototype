@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LerpTest : MonoBehaviour {
 
-    float lerpTime = 1f;
+    float lerpTime = 2.4f;
     float currentLerpTime;
  
     float moveDistance = 10f;

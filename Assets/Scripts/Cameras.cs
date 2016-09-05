@@ -13,15 +13,15 @@ public class Cameras : MonoBehaviour
     public float speedY = 1.0f;
     public float speedZ = 1.0f;
     public Vector3 nextPosition = Vector3.zero;
-    public bool perspectiveView = true;
+   
    
    void Start()
     {
-        //transform.LookAt(player);
+        transform.LookAt(player);
     }
 
 
-    void LateUpdate ()
+    void FixedUpdate ()
     {
 
         //to prevent the orthographic from getting slanted, i need to lock the player position to zero on certain axes before executing the followposition and lookatplayer. Maybe a "lock" method?
